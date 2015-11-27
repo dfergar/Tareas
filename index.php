@@ -12,4 +12,4 @@ header('Location: ctrl/inicio.php');
 // Probad a comentar la linea anterior y descomentar la siguiente. Veréis como
 // tendremos errores
  
-// include('ctrl/inicio.php');
+// include('ctrl/inicio.php') HOLA;
