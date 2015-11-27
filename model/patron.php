@@ -47,6 +47,11 @@ class Database
 	public function Consulta($sql)
 	{
 		$this->result=$this->link->query($sql);
+		if (! $this->result )
+		{
+			echo "<p>ERROR SQL</p><pre>$sql</pre><p style=\"background:#E33\">".$this->link->error."</p>";
+			exit;
+		}
 		return $this->result;
 	}
 	

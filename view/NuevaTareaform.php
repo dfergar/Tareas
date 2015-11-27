@@ -48,7 +48,7 @@ include(TEMPLATE_PATH.'menu.php');
 		<td>Población</td><td><input type="text" name="poblacion"></td>
 	</tr>
 	<tr>
-		<td>Provincia</td><td><input type="text" name="provincia"></td>
+		<td>Provincia</td><td><?php	CreaSelect($provincias, "provincia");?>
 	</tr>
 	<tr>
 		<td>cp</td><td><input type="text" name="cp"></td>

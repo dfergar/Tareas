@@ -5,6 +5,8 @@ include(MODEL_PATH.'tareas.php');
 
 
 // Suponemos que no habr� errores
+$provincias=ConsultaProvincias();
+
 $errores=array();
 if (! $_POST)
 {
@@ -12,6 +14,7 @@ if (! $_POST)
 	include (VIEW_PATH.'NuevaTareaform.php');
 	exit; // Fin scripta
 }
+
 $datos = array();
 
 $datos['descripcion']=$_REQUEST['descripcion'];

@@ -8,18 +8,18 @@ $myURL='listar.php';
 
 $nElementosxPagina=5;
 
-// Calculamos el número de página que mostraremos
+// Calculamos el nï¿½mero de pï¿½gina que mostraremos
 if (isset($_GET['pag']))
 {
-	// Leemos de GET el número de página
+	// Leemos de GET el nï¿½mero de pï¿½gina
 	$nPag=$_GET['pag'];
 }
 else
 {
-	// Mostramos la primera página
+	// Mostramos la primera pï¿½gina
 	$nPag=1;
 }
-$totalRegistros=numeroTareas();
+$totalRegistros=NumeroTareas();
 $totalPaginas=floor($totalRegistros/$nElementosxPagina);
 
 

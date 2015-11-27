@@ -39,8 +39,22 @@ function ListarTareas($nReg, $nElementosxPagina)
 		$tareas[$fila['Codigo']]=$fila['Tarea'];
 	}
 		
-	$db->cerrar();
+	//$db->cerrar();
 	return $tareas;
+}
+
+function ConsultaProvincias()
+{
+	$db = Database::getInstance();
+	$sql ="select cod, nombre from tbl_provincias";
+	$db->Consulta($sql);
+	//Empiezo a recorrer la consulta de las provincias
+	while ($fila = $db->LeeRegistro())
+	{		
+		//array con indice codigo provincia y valores los nombre de las provincias
+		$provincias[$fila['cod']]=$fila['nombre'];
+	}
+	return $provincias;
 }
 
 function VerTareas($id)
@@ -72,11 +86,34 @@ function NuevaTarea($datos)
 	//instanciamos y nos conectamos
 	$db = Database::getInstance();
 	
-	$sql="insert into tbl_tareas (descripcion, contacto, telefono, email, direccion,
-			 poblacion, cp, provincia, estado, fecha_crea, operario, fecha_realiza, anot_antes, anot_despues)
-			values ('$datos[descripcion]', '$datos[contacto]', '$datos[telefono], '$datos[email]', '$datos[direccion]', 
-	'$datos[poblacion]', '$datos[cp]', '$datos[provincia]', '$datos[estado]', '$datos[fecha_crea]', '$datos[fecha_realiza]', 
-	'$datos[anot_antes]', '$datos[anot_despues]')";
+	$sql="insert into tbl_tareas (descripcion, 
+								  contacto, 
+								  telefono, 
+								  email, 
+								  direccion,
+								  poblacion, 
+								  cp, 
+								  provincia, 
+								  estado, 
+								  fecha_crea, 
+								  operario, 
+								  fecha_realiza, 
+								  anot_antes, 
+								  anot_despues)
+			values (			  '$datos[descripcion]', 
+							      '$datos[contacto]', 
+							      '$datos[telefono]', 
+							      '$datos[email]', 
+							      '$datos[direccion]',
+							      '$datos[poblacion]', 
+							      '$datos[cp]', 
+							      '$datos[provincia]', 
+							      '$datos[estado]', 
+							      '$datos[fecha_crea]', 
+							      '$datos[operario]', 
+							      '$datos[fecha_realiza]',
+							      '$datos[anot_antes]', 
+								  '$datos[anot_despues]')";
 	$db->Consulta($sql);
 	$db->cerrar();
 	
@@ -145,20 +182,43 @@ function EnlaceAPagina($url, $pag, $texto, $activo=true)
 		echo $errores[$campo];
 	}
 }
-
+*/
 //Función para crear selects
+function CreaSelect3($array, $name, $selected='')
+{
+	echo "<select name=\"".$name."\">";
+
+	foreach($array as $clave=>$valor)
+	{
+		if ($valor==$selected)
+		{
+			$htmlSel=" selected";
+		}
+		else 
+		{
+			$htmlSel='';
+		}
+		echo "<option $htmlSel value=\"".$clave."\">".$valor;
+	}
+
+	echo "</select>";
+}
+
 function CreaSelect($array, $name)
 {
 	echo "<select name=\"".$name."\">";
 
 	foreach($array as $clave=>$valor)
 	{
+		
 		echo "<option value=\"".$clave."\">".$valor;
 	}
 
 	echo "</select>";
 }
 
+
+/*
 function FiltradoTareas($codigo)
 {
 	/*Los campos descripci�n y persona de contacto debe tener alg�n valor

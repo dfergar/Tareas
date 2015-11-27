@@ -49,7 +49,7 @@ include(TEMPLATE_PATH.'menu.php');
 		<td>Población</td><td><input type="text" name="poblacion" value="<?=$tareas['poblacion'];?>"></td>
 	</tr>
 	<tr>
-		<td>Provincia</td><td><input type="text" name="provincia" value="<?=$tareas['provincia'];?>"></td>
+		<td>Provincia</td><td><?php CreaSelect3($provincias,'provincia',$tareas['provincia']);?></td>
 	</tr>
 	<tr>
 		<td>cp</td><td><input type="text" name="cp" value="<?=$tareas['cp'];?>"></td>
