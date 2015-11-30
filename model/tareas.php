@@ -39,7 +39,7 @@ function ListarTareas($nReg, $nElementosxPagina)
 		$tareas[$fila['Codigo']]=$fila['Tarea'];
 	}
 		
-	//$db->cerrar();
+	$db->cerrar();
 	return $tareas;
 }
 
@@ -153,12 +153,14 @@ function MuestraPaginador($pag_actual, $nPags, $url)
 	echo "</div>";
 }
 
+
+
 /**
  * Devuelve el texto de un enlace (etiqueta <a>) a la p�gina $url si el enlace est� activo,
  * en otro caso solo devuelve el texto
  *
  * @param string $url		URL de la p�gina que muestra la lista
- * @param int $pag			N� de p�gina al cual enlazamos
+ * @param int $pag			Nº de página al cual enlazamos
  * @param string $texto		Texto del enlace
  * @param bool $activo		Se muestra enlace (true) o no (false)
  * @return string
@@ -211,10 +213,23 @@ function CreaSelect($array, $name)
 	foreach($array as $clave=>$valor)
 	{
 		
-		echo "<option value=\"".$clave."\">".$valor;
+		echo "<option value=\"".$valor."\">".$valor;
 	}
 
 	echo "</select>";
+}
+
+function BorrarTarea($id)
+{
+	
+	$db = Database::getInstance();
+	
+	$sql ="delete from tbl_tareas where id_tarea=$id";
+	
+	$db->Consulta($sql);
+	
+	//$db->cerrar();
+	
 }
 
 

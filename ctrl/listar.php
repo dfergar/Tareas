@@ -8,7 +8,7 @@ $myURL='listar.php';
 
 $nElementosxPagina=5;
 
-// Calculamos el n�mero de p�gina que mostraremos
+// Calculamos el número de p�gina que mostraremos
 if (isset($_GET['pag']))
 {
 	// Leemos de GET el n�mero de p�gina
@@ -20,7 +20,8 @@ else
 	$nPag=1;
 }
 $totalRegistros=NumeroTareas();
-$totalPaginas=floor($totalRegistros/$nElementosxPagina);
+
+$totalPaginas=floor($totalRegistros/$nElementosxPagina)+1;
 
 
 // Calculamos el registro por el que se empieza en la sentencia LIMIT

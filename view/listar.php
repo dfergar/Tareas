@@ -29,7 +29,7 @@ include(TEMPLATE_PATH.'menu.php');
         <td><?=$tarea?></td>
          <td><a href="VerTareas.php?id=<?=$codigo?>">Ver Tarea</a></td>
         <td><a href="ModificarTareas.php?id=<?=$codigo?>">Modificar</a></td>
-        <td><a href="BorrarTareas?id=<?=$codigo?>">Borrar</a></td>
+        <td><a href="BorrarTareas.php?id=<?=$codigo?>">Borrar</a></td>
     </tr>
 <?php endforeach; ?>
 </table>

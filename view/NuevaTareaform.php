@@ -26,7 +26,7 @@ include(TEMPLATE_PATH.'encabezado.php');
 include(TEMPLATE_PATH.'menu.php'); 
 ?>
 
-<form action="" method="POST">
+<form action="#" method="POST">
 <h2>Alta de nueva Tarea</h2>
 <table>
 
