@@ -36,6 +36,7 @@ $datos['anot_despues']=$_REQUEST['anot_despues'];
 
 
 NuevaTarea($datos);
+$mensaje="Tarea introducida";
 
 include 'inicio.php';
 

@@ -11,7 +11,8 @@ include(TEMPLATE_PATH.'menu.php');
 ?>
 <h1>Mantenimiento Integral de jardines y piscinas</h1>
 <p>Aplicación de Gestión</p>
-<?php
+<p><?=$mensaje?>
+<?php 
 include(TEMPLATE_PATH.'pie.php');
 ?>
 </body>
