@@ -7,6 +7,7 @@
  * pues en otro caso tendríamos problemas para crear los enlaces URL de las
  * diferentes páginas
  */
+
 header('Location: ctrl/inicio.php');
 
 // Probad a comentar la linea anterior y descomentar la siguiente. Veréis como
