@@ -44,7 +44,7 @@ include(TEMPLATE_PATH.'menu.php');
         <td>Código Postal</td><td><?=$tareas['cp'];?></td> 
    </tr>
    <tr>    
-        <td>Provincia</td><td><?=$tareas['provincia'];?></td> 
+        <td>Provincia</td><td><?=ObtenerProvincia($tareas['provincia']);?></td> 
    </tr>
    <tr>    
         <td>Estado</td><td><?=$tareas['estado'];?></td>  

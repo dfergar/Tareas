@@ -56,6 +56,15 @@ function ConsultaProvincias()
 	}
 	return $provincias;
 }
+function ObtenerProvincia($codProvincia)
+{
+	$db = Database::getInstance();
+	$sql ="select nombre from tbl_provincias where cod=$codProvincia";
+	$db->Consulta($sql);
+	$fila = $db->LeeRegistro();
+	
+	return $fila['nombre'];
+}
 
 function VerTareas($id)
 {
@@ -213,7 +222,7 @@ function CreaSelect($array, $name)
 	foreach($array as $clave=>$valor)
 	{
 		
-		echo "<option value=\"".$valor."\">".$valor;
+		echo "<option value=\"".$clave."\">".$valor;
 	}
 
 	echo "</select>";
