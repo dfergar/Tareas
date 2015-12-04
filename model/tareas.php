@@ -43,6 +43,8 @@ function ListarTareas($nReg, $nElementosxPagina)
 	return $tareas;
 }
 
+
+
 function ConsultaProvincias()
 {
 	$db = Database::getInstance();
@@ -128,6 +130,8 @@ function NuevaTarea($datos)
 	
 
 }
+
+
 
 function VerError($campo)
 {

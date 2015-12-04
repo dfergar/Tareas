@@ -20,5 +20,6 @@ $datos['descripcion']=$_REQUEST['descripcion'];
 $datos['provincia']=$_REQUEST['provincia'];
 $datos['estado']=$_REQUEST['estado'];
 
-buscartarea($datos);
 
+
+//BuscarTarea($datos);

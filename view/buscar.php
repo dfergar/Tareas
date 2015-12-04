@@ -19,7 +19,11 @@ include(TEMPLATE_PATH.'menu.php');
 			<td>Provincia</td><td><?php	CreaSelect($provincias, "provincia");?>
 		</tr>
 		<tr>
-			<td>Estado(P=Pendiente, R=Realizada, C=Cancelada)</td><td><input type="text" name="estado"></td>
+			<td>
+				<input type="radio" name="estado" value="P">Pendiente
+				<input type="radio" name="estado" value="R">Realizada
+				<input type="radio" name="estado" value="C">Cancelada
+			</td>
 		</tr>
 		<tr>
 			<td><input type="submit" value="Enviar"></td>
