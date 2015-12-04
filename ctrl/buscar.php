@@ -5,7 +5,14 @@ include 'constantes.php';
 include(MODEL_PATH.'tareas.php');
 
 $provincias=ConsultaProvincias();
-include(VIEW_PATH.'buscar.php');
+
+$errores=array();
+if (! $_POST)
+{
+	// Primera vez
+	include (VIEW_PATH.'buscar.php');
+	exit; // Fin script
+}
 
 $datos = array();
 
